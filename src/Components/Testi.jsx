@@ -86,6 +86,7 @@ function Testi() {
           },
         ],
       };
+      
     
       const slickDotsStyle = {
         top: 'auto',
