@@ -38,15 +38,15 @@ function InfraStructure() {
 
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <h5 className='rounded-pill p-3 me-5 text-center text-white' style={{ marginLeft: "5%", marginTop: "1rem", border: "1px solid white", fontFamily: "bold", backgroundColor: "#1D4ED8", width: "80%" }}>Schedule Call</h5>
-            <h5 style={{ marginTop: "1rem" }}>Read more  <i style={{ color: "blue" }} class='fa-solid fa-arrow-up-right-from-square'></i></h5>
+            <h5 style={{ marginTop: "1rem", fontSize: "1rem" }}>Read more  <i style={{ color: "blue" }} class='fa-solid fa-arrow-up-right-from-square'></i></h5>
           </div>
         </Col>
 
-        <Col xs={12} md={6} lg={6}>
+        {/* Conditionally render the image for larger screens */}
+        <Col xs={12} md={6} lg={6} className='d-none d-lg-block'>
           <img className='rounded me-5' style={{ width: "100%" }} src="https://www.ombrulla.com/_astro/ai-infrastructure-inspection.c8f30cbf_ZEO7he.webp" alt="image" />
         </Col>
       </Row>
-
     </div>
   );
 }

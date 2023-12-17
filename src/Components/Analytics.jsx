@@ -42,7 +42,8 @@ function Analytics() {
           </div>
         </Col>
 
-        <Col sm={12} md={6} lg={6}>
+        {/* Conditionally render the image for larger screens */}
+        <Col sm={12} md={6} lg={6} className='d-none d-lg-block'>
           <img className='rounded me-5 mt-5' style={{ width: "100%" }} src="https://www.ombrulla.com/_astro/ai-data-analytics.ef51a904_1g36GR.webp" alt="image" />
         </Col>
 

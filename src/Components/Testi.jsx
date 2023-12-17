@@ -86,7 +86,6 @@ function Testi() {
           },
         ],
       };
-      
     
       const slickDotsStyle = {
         top: 'auto',
@@ -96,56 +95,53 @@ function Testi() {
     
       return (
         <Container fluid style={{ backgroundColor: "#172554", marginTop: "40px", paddingTop: "85px", paddingBottom: "100px" }}>
-        <div className='mt-5' style={{ display: "flex", justifyContent: "flex-start", alignItems: "center", marginLeft: "160px" }}>
-          <div className='mb-2 me-2' style={{ backgroundColor: 'blue', padding: '8px ', borderRadius: "5px" }}></div>
-          <h6 style={{ color: "white" }}>OUR TESTIMONIALS</h6>
-        </div>
-  
-        <h1 className='mt-4' style={{ color: "white", marginLeft: "160px" }}>What Customers Say About Us</h1>
-  
-        <Row className="justify-content-center mt-5">
-          <Col xs={12} sm={10} md={10} lg={10}>
-            <Slider {...settings}>
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="px-2">
-                  <Card className="rounded-top custom-card">
-                    {/* Adjust the height value in the CSS */}
-                    <Card.Body className="px-4 py-4">
-                      <div style={{ fontSize: '30px' }}>
-                        <i className="fa-solid fa-quote-left text-primary"></i>
-                      </div>
-                      <Card.Text style={{fontSize:"30px"}} className="pb-4 text-muted">{testimonial.quote}</Card.Text>
-                    </Card.Body>
-                    <Card.Footer style={{backgroundColor:"#CBD5E1"}} className=" d-flex py-3">
-                      <img
-                        src={testimonial.image}
-                        alt=""
-                        className="rounded-circle m-2"
-                        style={{ width: '80px', height: '80px' }}
-                      />
-                      <div className="ms-2 mt-2">
-                        <Card.Title>{testimonial.author}</Card.Title>
-                        <Card.Subtitle className="text-primary">{testimonial.company}</Card.Subtitle>
-                      </div>
-                    </Card.Footer>
-                  </Card>
-                </div>
-              ))}
-            </Slider>
-          </Col>
-        </Row>
-  
-        {/* Inline style for slick dots */}
-        <style>
-         {/* Inline style for slick dots */}
-<style>
-  {`.slick-dots { top: ${slickDotsStyle.top} !important; bottom: ${slickDotsStyle.bottom}; }`}
-  {`.custom-card { height: 65vh !important; }`} {/* Adjusted the height value */}
-</style>
-
-        </style>
-      </Container>
-    );
-  }
-
-export default Testi
+          <div className='mt-5' style={{ display: "flex", alignItems: "center", marginLeft: "10px" }}>
+            <div className='mb-2 me-2' style={{ backgroundColor: 'blue', padding: '8px ', borderRadius: "5px" }}></div>
+            <h6 style={{ color: "white" }}>OUR TESTIMONIALS</h6>
+          </div>
+    
+          <h1 className='mt-4' style={{ color: "white", marginRight: "10px", marginLeft: "auto", textAlign: "right" }}>What Customers Say About Us</h1>
+    
+          <Row className="justify-content-center mt-5">
+            <Col xs={12} sm={10} md={10} lg={10}>
+              <Slider {...settings}>
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="px-2">
+                    <Card className="rounded-top custom-card">
+                      {/* Adjust the height value in the CSS */}
+                      <Card.Body className="px-4 py-4">
+                        <div style={{ fontSize: '30px' }}>
+                          <i className="fa-solid fa-quote-left text-primary"></i>
+                        </div>
+                        <Card.Text style={{ fontSize: "30px" }} className="pb-4 text-muted">{testimonial.quote}</Card.Text>
+                      </Card.Body>
+                      <Card.Footer style={{ backgroundColor: "#CBD5E1" }} className=" d-flex py-3">
+                        <img
+                          src={testimonial.image}
+                          alt=""
+                          className="rounded-circle m-2"
+                          style={{ width: '80px', height: '80px' }}
+                        />
+                        <div className="ms-2 mt-2">
+                          <Card.Title>{testimonial.author}</Card.Title>
+                          <Card.Subtitle className="text-primary">{testimonial.company}</Card.Subtitle>
+                        </div>
+                      </Card.Footer>
+                    </Card>
+                  </div>
+                ))}
+              </Slider>
+            </Col>
+          </Row>
+    
+          {/* Inline style for slick dots */}
+          <style>
+            {`.slick-dots { top: ${slickDotsStyle.top} !important; bottom: ${slickDotsStyle.bottom}; }`}
+            {`.custom-card { height: 65vh !important; }`} {/* Adjusted the height value */}
+          </style>
+    
+        </Container>
+      );
+    }
+    
+    export default Testi;

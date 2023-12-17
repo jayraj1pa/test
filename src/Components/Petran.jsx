@@ -9,7 +9,8 @@ function Petran() {
 
       <Row className="flex-column-reverse flex-md-row">
         <Col sm={12} md={6}>
-          <img style={{ width: "100%", marginLeft: "5%" }} src='https://www.ombrulla.com/_astro/asset-performance-management-software.82e2a11d_29kMe4.webp' alt='' />
+          {/* Reduced image size for smaller screens */}
+          <img style={{ width: "100%", maxWidth: "80%", marginLeft: "5%" }} src='https://www.ombrulla.com/_astro/asset-performance-management-software.82e2a11d_29kMe4.webp' alt='' />
         </Col>
         <Col sm={12} md={6}>
           <img style={{ width: "60%", marginLeft: "5%" }} src="https://www.ombrulla.com/_astro/petran-logo.99970d82_1t8FzR.webp" alt="" />

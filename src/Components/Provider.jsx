@@ -24,7 +24,7 @@ function Provider() {
             <i className='p-4 me-2 fa-solid fa-play fa-2xl' style={{ color: 'white' }}></i>
           </div>
 
-          <h5 className='ms-3'>Watch Corporate Video</h5>
+          <h5 className='ms-3' style={{ fontSize: '1rem' }}>Watch Corporate Video</h5>
         </div>
 
       </div>

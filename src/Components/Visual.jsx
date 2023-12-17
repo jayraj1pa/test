@@ -42,7 +42,8 @@ function Visual() {
           </div>
         </Col>
 
-        <Col sm={12} md={6} lg={6}>
+        {/* Conditionally render the image for larger screens */}
+        <Col sm={12} md={6} lg={6} className='d-none d-lg-block'>
           <img className='rounded ms-5 mt-5' style={{ width: "100%" }} src="https://www.ombrulla.com/_astro/ai-visual-inspection.7625d432_2nYhqo.webp" alt="image" />
         </Col>
 

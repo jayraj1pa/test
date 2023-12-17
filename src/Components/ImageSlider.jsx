@@ -14,35 +14,33 @@ function ImageSlider() {
     'https://www.ombrulla.com/azelit.webp',
   ];
 
-  const [currentSet, setCurrentSet] = useState(imageLinks.slice(0, 5));
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    // Function to update the set of images every 3 seconds
-    const updateImages = () => {
-      const startIndex = currentSet.length;
-      const endIndex = startIndex + 4;
-      const nextSet = imageLinks.slice(startIndex, endIndex);
-      setCurrentSet(nextSet.length === 4 ? nextSet : imageLinks.slice(0, 5));
+    const updateIndex = () => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % imageLinks.length);
     };
 
-    // Set up an interval to update images every 3 seconds
-    const intervalId = setInterval(updateImages, 3000);
+    const intervalId = setInterval(updateIndex, 3000);
 
-    // Clean up the interval on component unmount
     return () => clearInterval(intervalId);
-  }, [currentSet, imageLinks]); // Remove currentSet from the dependency array
+  }, [imageLinks]);
 
   return (
     <Container fluid>
-      <Row className="justify-content-center" style={{ overflow: 'hidden', whiteSpace: 'nowrap' }}>
-        {/* Display the current set of images */}
-        {currentSet.map((image, index) => (
+      <Row className="justify-content-center" style={{ overflow: 'hidden', whiteSpace: 'nowrap', position: 'relative' }}>
+        {[0, 1, 2, 3, 4].map((index) => (
           <img
-          className='ms-5 me-5'
             key={index}
-            src={image}
+            src={imageLinks[(currentIndex + index) % imageLinks.length]}
             alt={`Image ${index + 1}`}
-            style={{ width: '200px', height: '150px', margin: '0 10px', transition: 'transform 0.5s' }}
+            style={{
+              width: '200px',
+              height: '150px',
+              margin: '0 10px',
+              transition: 'transform 0.5s',
+              transform: `translateX(${index * 220}px)`, // Adjust the value for spacing between images
+            }}
           />
         ))}
       </Row>
